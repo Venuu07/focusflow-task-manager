@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FocusFlow - Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+  body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  body.fade-in {
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+  <div class="theme-icon" id="darkModeToggle" title="Toggle Dark Mode">🌙</div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to <span>FocusFlow</span></h1>
+      <p>🧠 Stay organized. 🚀 Get things done. <br />Your productivity companion is here.</p>
+      <button id="getStartedBtn">✨ Get Started</button>
+    </div>
+    <div class="hero-image">
+      <img src="https://www.shutterstock.com/image-vector/do-list-planning-icon-concept-600nw-739093225.jpg" />
+    </div>
+  </section>
+
+  <script>
+    document.getElementById("getStartedBtn").addEventListener("click", () => {
+      window.location.href = "tasks.html"; // Redirect to Task Manager page
+    });
+
+    // Optional: Dark mode toggle for this page
+    const darkToggle = document.getElementById("darkModeToggle");
+    if (localStorage.getItem("darkMode") === "enabled") {
+      document.body.classList.add("dark-mode");
+      darkToggle.textContent = "☀️";
+    }
+
+    darkToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const enabled = document.body.classList.contains("dark-mode");
+      localStorage.setItem("darkMode", enabled ? "enabled" : "disabled");
+      darkToggle.textContent = enabled ? "☀️" : "🌙";
+    });
+
+  </script>
+  <script>
+  // Fade-in when page loads
+  window.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+  });
+
+  // Optional: Fade-out before navigation
+  const links = document.querySelectorAll("a, button");
+  links.forEach((el) => {
+    el.addEventListener("click", (e) => {
+      const target = el.getAttribute("href") || el.dataset.href;
+      if (target) {
+        e.preventDefault();
+        document.body.classList.remove("fade-in");
+        document.body.style.opacity = "0";
+        setTimeout(() => {
+          window.location.href = target;
+        }, 400);
+      }
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FocusFlow - Task Manager</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+  body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  body.fade-in {
+    opacity: 1;
+  }
+    #loadingSpinner {
+    position: fixed;
+    inset: 0;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+  }
+
+  #loadingSpinner.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #ccc;
+    border-top: 6px solid #517efb;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+</head>
+<body>
+      <div id="loadingSpinner">
+    <div class="spinner"></div>
+  </div>
+  <div class="theme-icon" id="darkModeToggle" title="Toggle Dark Mode">🌙</div>
+
+  <div class="container">
+    <h1>🎯 FocusFlow</h1>
+
+    <div class="task-input">
+      <input type="text" id="taskText" placeholder="Enter your task..." />
+      <input type="time" id="taskTime" />
+      <button id="addBtn">➕ Add</button>
+    </div>
+        <br>
+    <div class="filters">
+      <button class="filter-btn" data-filter="all">📋 All</button>
+      <button class="filter-btn" data-filter="completed">✅ Completed</button>
+      <button class="filter-btn" data-filter="pending">⏳ Pending</button>
+    </div>
+
+    <div id="taskList"></div>
+
+    <div class="xp-section">
+      🌟 XP: <span id="xpCount">0</span>
+    </div>
+  </div>
+  <script>
+  // Page fade-in + hide loader
+  window.addEventListener("DOMContentLoaded", () => {
+    const loader = document.getElementById("loadingSpinner");
+    setTimeout(() => {
+      loader.classList.add("fade-out");
+      document.body.classList.add("fade-in");
+    }, 1000); // 1 second delay
+  });
+
+  // Fade-out before navigation
+  const links = document.querySelectorAll("a, button");
+  links.forEach((el) => {
+    el.addEventListener("click", (e) => {
+      const target = el.getAttribute("href") || el.dataset.href;
+      if (target) {
+        e.preventDefault();
+        document.body.classList.remove("fade-in");
+        document.body.style.opacity = "0";
+        setTimeout(() => {
+          window.location.href = target;
+        }, 400);
+      }
+    });
+  });
+</script>
+
+  <script src="script.js"></script>
+</body>
+</html>
