@@ -78,7 +78,7 @@ No frameworks, no libraries — just pure frontend 🔥
 
 💪 Anyone who enjoys gamifying their to-dos
 
-🔮 Future Scope
+## 🔮 Future Scope
 🔔 Push notifications
 
 📱 Fully responsive mobile UI
