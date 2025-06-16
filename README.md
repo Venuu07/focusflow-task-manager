@@ -33,6 +33,7 @@ cd focusflow-task-manager
 2. Open tasks.html
 Open it directly in your browser, or serve using VS Code Live Server, or deploy on any static host like GitHub Pages, Netlify, or Vercel.
 ```
+```
 📁 Folder Structure
 
 ```bash
