@@ -32,10 +32,11 @@ git clone https://github.com/yourusername/focusflow-task-manager.git
 cd focusflow-task-manager
 2. Open tasks.html
 Open it directly in your browser, or serve using VS Code Live Server, or deploy on any static host like GitHub Pages, Netlify, or Vercel.
-
+```
 📁 Folder Structure
-bash
-Copy code
+
+```bash
+
 focusflow-task-manager/
 ├── index.html           # (optional landing page)
 ├── tasks.html           # Main Task Manager App
@@ -43,7 +44,9 @@ focusflow-task-manager/
 ├── script.js            # All app logic and interactivity
 ├── screenshots/         # UI screenshots for README
 └── README.md            # This file
+```
 📸 Screenshots
+
 ✅ Task List Interface
 ![Task List](screenshots/task-list.png)
 
