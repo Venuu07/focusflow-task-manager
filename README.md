@@ -46,7 +46,7 @@ focusflow-task-manager/
 ├── screenshots/         # UI screenshots for README
 └── README.md            # This file
 ```
-📸 Screenshots
+## 📸 Screenshots
 
 ✅ Task List Interface
 ![Task List](screenshots/task-list.png)
@@ -60,7 +60,7 @@ focusflow-task-manager/
 
 
 
-🛠️ Built With
+## 🛠️ Built With
 HTML5
 
 CSS3
@@ -69,7 +69,7 @@ Vanilla JavaScript (ES6+)
 
 No frameworks, no libraries — just pure frontend 🔥
 
-👤 Who is it For?
+## 👤 Who is it For?
 📚 Students managing study goals
 
 🧑‍💻 Developers planning sprints
@@ -87,23 +87,23 @@ No frameworks, no libraries — just pure frontend 🔥
 
 ⏱️ Pomodoro mode
 
-🙌 Contributing
+## 🙌 Contributing
 Pull requests are welcome!
 If you have suggestions or new features in mind, feel free to open an issue or fork this project.
 
-💖 Acknowledgements
+## 💖 Acknowledgements
 Made with ❤️ by Venu
 
 Built to explore gamification, productivity, and pure frontend logic
 
-⭐ Show Some Love
+## ⭐ Show Some Love
 🌟 Star this repo on GitHub
 
 🔁 Fork and customize your own version
 
 📢 Share with others
 
-📄 License
+## 📄 License
 Licensed under the MIT License.
 
 
